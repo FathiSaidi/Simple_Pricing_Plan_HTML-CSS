@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+:root{
+    --purple: #555fae;
+    --dpurple: #3f488d;
+    --red: #e44f54;
+    --dred: #ac3d41;
+    --green:  #1ab195;
+    --dgreen:  #1b7967;
+}
+
+body {
+    background-color: #eee;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box {
+    background-color: #ffffff;
+    color: #000000;
+    width: 300px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.title {
+    background-color: var(--green);
+    color: #ffffff;
+    width: 100%;
+    padding: 20px;
+    font-size: 25px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.ticket {
+    background-color: var(--green);
+    color: #fff;
+    padding: 10px;
+    width: 160px;
+    font-size: 20px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: relative;
+    left: -10px;
+    margin-bottom: 30px;
+}
+
+.ticket::before {
+    content: "";
+    background-color: var(--dgreen);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 10px;
+    top: -25px;
+    z-index: -1;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+p:last-of-type {
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: var(--green);
+    color: #fff;
+    width: 180px;
+    padding: 12px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    border: none;
+}
+
+button:hover {
+    animation-name: dance;
+    animation-duration: 0.4s;
+}
+
+@keyframes dance {
+    0%{
+        transform: translate(0);
+    }
+    30%{
+        transform: translate(15px);
+    }
+
+    70%{
+        transform: translate(-15px);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+
+/******** Premium Colors ********/
+
+.premium .title {
+    background-color: var(--red);
+}
+
+.premium .ticket {
+    background-color: var(--red);
+}
+
+.premium .ticket::before {
+    content: "";
+    background-color: var(--dred);
+}
+
+.premium button {
+    background-color: var(--red);
+}
+
+/******** Business Colors ********/
+
+.business .title {
+    background-color: var(--purple);
+}
+
+.business .ticket {
+    background-color: var(--purple);
+}
+
+.business .ticket::before {
+    content: "";
+    background-color: var(--dpurple);
+}
+
+.business button {
+    background-color: var(--purple);
+}
